@@ -1,0 +1,62 @@
+customer_id,first_name,last_name,email,country,signup_date
+1001,Pieter,Russo,pieter.russo@example.com,IT,2025-05-21
+1002,Elena,De Luca,elena.deluca@example.com,Italy,2025-02-22
+1003,Sanne,Schmidt,sanne.schmidt@example.com,it,2025-10-30
+1004,Federica,Bianchi,federica.bianchi@example.com,IT,2025-02-17
+1005,Matteo,De Luca,matteo.deluca@example.com,Netherlands,2025-11-05
+1006,Marco,Schmidt,marco.schmidt@example.com,ITA,2025-10-07
+1007,Federica,De Luca,,NL,2025-10-29
+1008,Davide,Rossi,davide.rossi@example.com, IT ,2025-03-23
+1009,Liam,Janssen,liam.janssen@example.com,fr,2025-05-23
+1010,Andrea,Conti,andrea.conti@example.com, IT ,2025-06-22
+1011,Sara,Ferrari,sara.ferrari@example.com,France,2025-02-19
+1012,Martina,De Jong,martina.dejong@example.com,nl,2025-05-16
+1013,Sophie,Bianchi,sophie.bianchi@example.com,Germany,2025-08-24
+1014,Beatrice,Russo,beatrice.russo@example.com,France,2025-02-10
+1015,Beatrice,Bruno,beatrice.bruno@example.com,DE,2025-11-13
+1016,Tomas,De Jong,tomas.dejong@example.com,nl,2025-04-09
+1017,  Liam ,Ferrari,liam.ferrari@example.com,IT,2025-04-27
+1018,Noah,Bruno,noah.bruno@example.com,it,2025-04-30
+1019,Marie,Russo,marie.russo@example.com,France,2025-05-23
+1020,Simone,De Jong,simone.dejong@example.com,Italy,2025-07-09
+1021,Martina,Conti,martina.conti@example.com,DE,2025-05-17
+1022,Liam,Ferrari,liam.ferrari@example.com,nl,2025-11-22
+1023,Chiara,Schmidt,chiara.schmidt@example.com,Germany,2025-05-06
+1024,Chiara,Dubois,chiara.dubois@example.com,France,2025-05-19
+1025,Lena,Schmidt,lena.schmidt@example.com,ITA,2025-06-16
+1026,Hugo,Bianchi,hugo.bianchi@example.com,ITA,2025-01-17
+1027,Sophie,Visser,sophie.visser@example.com,France,2025-05-18
+1028,Luca,Conti,luca.conti@example.com,nl,2025-06-11
+1029,Matteo,Moreau,matteo.moreau@example.com,France,2025-11-26
+1030,Simone,Romano,simone.romano@example.com,FR,2025-03-13
+1031,Elena,Schmidt,elena.schmidt@example.com,Netherlands,2025-05-15
+1032,Emma,Silva,emma.silva@example.com,France,2025-10-26
+1033,Alessandro,De Jong,alessandro.dejong@example.com,ITA,2025-03-12
+1034,  Lorenzo ,Moreau,lorenzo.moreau@example.com,it,2025-01-25
+1035,Marie,Russo,marie.russo@example.com,Italy,2025-11-18
+1036,Chiara,Janssen,chiara.janssen@example.com,nl,2025-02-02
+1037,Alessandro,Bakker,alessandro.bakker@example.com,nl,2025-08-28
+1038,Lorenzo,Greco,lorenzo.greco@example.com,Netherlands,2025-01-06
+1039,Sanne,Russo,sanne.russo@example.com,DE,2025-10-02
+1040,Noah,Greco,noah.greco@example.com, IT ,2025-11-25
+1041,Francesco,Russo,,FR,2025-08-11
+1042,Chiara,Dubois,chiara.dubois@example.com,IT,2025-05-15
+1043,Lorenzo,Gallo,lorenzo.gallo@example.com,Netherlands,2025-02-24
+1044,Marie,Bruno,marie.bruno@example.com,DE,2025-09-17
+1045,Alice,Conti,alice.conti@example.com,Italy,2025-07-11
+1046,Noah,Gallo,noah.gallo@example.com,Netherlands,2025-09-29
+1047,Lena,Rossi,lena.rossi@example.com,nl,2025-06-15
+1048,Valentina,Rossi,valentina.rossi@example.com,it,2025-07-05
+1049,Tomas,Bruno,tomas.bruno@example.com,ITA,2025-01-30
+1050,Elena,Silva,elena.silva@example.com,it,2025-02-13
+1051,  Emma ,Moreau,emma.moreau@example.com,it,2025-09-30
+1052,Noah,Romano,noah.romano@example.com,Italy,2025-09-01
+1053,Beatrice,Gallo,beatrice.gallo@example.com,FR,2025-09-28
+1054,Marie,Costa,marie.costa@example.com,France,2025-04-19
+1055,Lena,Schmidt,lena.schmidt@example.com, IT ,2025-04-13
+1056,Liam,Bruno,liam.bruno@example.com,France,2025-07-11
+1057,Simone,Müller,simone.müller@example.com,NL,2025-03-03
+1058,Elena,De Luca,elena.deluca@example.com,it,2025-06-23
+1059,Marco,Silva,marco.silva@example.com,Netherlands,2025-04-28
+1060,Giovanni,De Luca,giovanni.deluca@example.com,IT,2025-02-06
+1004,Federica,Bianchi,federica.bianchi@example.com,IT,2025-02-17

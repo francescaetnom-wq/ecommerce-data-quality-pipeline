@@ -1,0 +1,22 @@
+# in models/marts/marts.yml
+version: 2
+
+models:
+  - name: fct_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_revenue
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['known', 'unknown']
