@@ -44,8 +44,7 @@ jobs:
 
       - name: dbt seed
         run: dbt seed
-        working-directory: progetto_revenue
-
+  
       - name: dbt build (run + test)
         run: dbt build
-        working-directory: progetto_revenue
+        
