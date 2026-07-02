@@ -1,5 +1,7 @@
 # E-commerce Data Quality Pipeline
 
+![dbt CI](https://github.com/francescaetnom-wq/ecommerce-data-quality-pipeline/actions/workflows/dbt_ci.yml/badge.svg)
+
 Un progetto di analytics engineering che trasforma dati e-commerce grezzi e volutamente imperfetti — clienti duplicati, ordini orfani, importi mancanti o negativi — in modelli di ricavi affidabili, testati e tracciabili. Costruito con **dbt** su **Google BigQuery**, seguendo il paradigma ELT: carica prima, trasforma dopo, dentro il warehouse.
 
 Non è un tutorial ripulito. I dati grezzi contengono problemi reali di qualità inseriti di proposito, e il progetto esiste per dimostrare come si gestiscono — non nascondendoli, ma decidendo consapevolmente dove e come trattarli lungo la pipeline.
@@ -68,12 +70,28 @@ Un test che fallisce su un dato sporco reale non è un bug della pipeline: è la
 
 ---
 
+## CI/CD
+
+Ogni push su `main` fa scattare una pipeline automatica su **GitHub Actions** (`.github/workflows/dbt_ci.yml`) che:
+
+1. Provvede una macchina Ubuntu pulita, temporanea, senza nulla di preinstallato
+2. Installa Python 3.12 e dbt da zero
+3. Si autentica su BigQuery tramite un **Service Account** dedicato, con permessi minimi (`bigquery.dataEditor` + `bigquery.jobUser`, non Owner) — la chiave vive esclusivamente come GitHub Secret cifrato, mai nel codice
+4. Ricarica i seed e ricostruisce l'intera pipeline da zero (`dbt build`), eseguendo tutti i 17 test
+
+**severity differenziata**: i test di staging che intercettano le mine di data quality note (duplicati, orfani) sono configurati con `severity: warn` — vengono segnalati ma non bloccano la build, perché sono problemi già gestiti esplicitamente nei marts. I test sui marts restano a `severity: error`: se falliscono, è un bug vero e la pipeline si ferma. Questa distinzione è deliberata — un CI che tratta ogni fallimento allo stesso modo insegna a ignorare i fallimenti in generale.
+
+Il fatto che ogni run riparta da una macchina mai vista prima, senza nulla configurato a mano, è la prova che il progetto è davvero riproducibile — non funziona solo sul computer di chi l'ha scritto.
+
+---
+
 ## Stack
 
 - **dbt Core** — trasformazione, testing, documentazione, gestione delle dipendenze (DAG)
 - **Google BigQuery** — data warehouse, region EU
 - **Python 3.12** — ambiente di sviluppo (venv)
 - **Git / GitHub** — versionamento
+- **GitHub Actions** — CI/CD, esecuzione automatica di build e test ad ogni push
 
 ---
 
