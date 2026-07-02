@@ -1,0 +1,51 @@
+name: dbt CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  dbt_build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dbt
+        run: pip install dbt-bigquery
+
+      - name: Write GCP credentials
+        run: echo '${{ secrets.GCP_SA_KEY }}' > $HOME/gcp-key.json
+
+      - name: Set up dbt profile
+        run: |
+          mkdir -p $HOME/.dbt
+          cat > $HOME/.dbt/profiles.yml << EOF
+          progetto_revenue:
+            target: ci
+            outputs:
+              ci:
+                type: bigquery
+                method: service-account
+                keyfile: $HOME/gcp-key.json
+                project: luminous-lambda-483816-p2
+                dataset: dbt_francesca
+                threads: 4
+                location: EU
+          EOF
+
+      - name: dbt seed
+        run: dbt seed
+        working-directory: progetto_revenue
+
+      - name: dbt build (run + test)
+        run: dbt build
+        working-directory: progetto_revenue
