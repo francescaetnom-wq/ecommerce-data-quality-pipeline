@@ -1,5 +1,10 @@
+cat > .gitignore << 'EOF'
 dbt-env/
 target/
 dbt_packages/
 logs/
 .user.yml
+dbt-ci-key.json
+.DS_Store
+docs/.DS_Store
+EOF
